@@ -67,3 +67,12 @@ vào đúng thư mục phân loại trong `public/images/` (`logos`, `map`, ho�
 
 - File âm thanh thuyết minh (`voice-vi.mp3`, `voice-en.mp3`) chưa có sẵn trong
   bộ tài liệu gốc — xem `public/audio/README.md`.
+
+## Chạy online miễn phí (GitHub Pages)
+
+Trang có thể chạy hoàn toàn tĩnh: `npm run build` nạp dữ liệu vào SQLite rồi
+xuất ra `public/data/site.json`, frontend đọc file này thay vì gọi server.
+Mỗi lần push lên nhánh `main`, GitHub Actions (`.github/workflows/pages.yml`)
+tự build và đăng thư mục `public/` lên GitHub Pages. Sau khi sửa nội dung
+trong `server/init-db.js`, nên chạy `npm run build` và commit luôn
+`public/data/site.json` để bản chạy local cũng cập nhật.

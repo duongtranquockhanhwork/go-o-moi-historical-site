@@ -5,6 +5,7 @@
   "description": "Trang số hóa Di tích lịch sử Gò Ô Môi - Express + SQLite",
   "scripts": {
     "init-db": "node server/init-db.js",
+    "build": "node server/init-db.js && node scripts/build-static.js",
     "start": "node server/init-db.js && node server/server.js",
     "dev": "node --watch server/server.js"
   },

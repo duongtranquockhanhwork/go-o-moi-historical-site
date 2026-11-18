@@ -7,8 +7,8 @@ let currentOpenModalId = null;
 let siteData = null; // { translations: {vi,en}, points: [...], gallery: [...] }
 
 async function loadSiteData() {
-    const res = await fetch('/api/site');
-    if (!res.ok) throw new Error('Không tải được dữ liệu từ /api/site');
+    const res = await fetch('data/site.json');
+    if (!res.ok) throw new Error('Không tải được dữ liệu từ data/site.json');
     siteData = await res.json();
 }
 
@@ -84,7 +84,7 @@ function applyLanguageContent() {
     let audioSource = document.getElementById('audio-source');
     let isPlaying = !audioPlayer.paused;
 
-    audioSource.src = currentLang === 'vi' ? '/audio/voice-vi.mp3' : '/audio/voice-en.mp3';
+    audioSource.src = currentLang === 'vi' ? 'audio/voice-vi.mp3' : 'audio/voice-en.mp3';
 
     audioPlayer.load();
     if (isPlaying) { audioPlayer.play().catch(e => console.log("Autoplay bị chặn")); }
